@@ -25,9 +25,8 @@
 #' mosaic_sam(x, primpke, n_cores = 1, temporal = TRUE)
 mosaic_sam <- function(info, sref, derivative = NULL, base_corr = TRUE, FUN = NULL, n_cores = NULL, temporal = FALSE){
   
-  fname <- gsub(info@path, "", info@file)
+  fname <- basename(info@file)
   fname <- gsub(".dmt$", "", fname)
-  fname <- gsub("/", "", fname)
   
   dmdfiles <- list.files(pattern = fname, path = info@path)
   dmdfiles <- dmdfiles[grep(".dmd$", dmdfiles)]
