@@ -101,7 +101,7 @@ install.packages('Rcpp', dependencies = TRUE)
   
   
   # * Export summary ####
-    x.sum_clip <- summary_sam(x.smooth, mask = NULL , clusternames = primpke@clusternames, slice=1, smooth = FALSE, temporal = TRUE)
+    x.sum_clip <- summary_sam(x.sam, mask = NULL , clusternames = primpke@clusternames, slice=1, smooth = FALSE, temporal = TRUE)
     
     x.sum_red=subset(x.sum_clip, x.sum_clip$area>10)
     B=x.sum_red %>% group_by(clname) %>% 
